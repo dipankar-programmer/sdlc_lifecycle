@@ -52,3 +52,15 @@ python cli.py
 All generated files (user stories, design documents, code, test cases) are saved in:
 
 src/SDLC_Project/outputs/
+
+💡 Future Improvements
+Add support for PDF export of generated artifacts
+
+Integrate with GitHub for auto-PR creation
+
+Add role-based access and project history tracking
+
+Replace CLI with GUI or web-based dashboard (Working on it)
+
+🤝 Contributors
+Your Dipankar
