@@ -1,0 +1,6 @@
+venv/
+.env/
+Test/
+SDLC_working_till_Final.ipynb
+langchain_tutorial.ipynb
+output.png

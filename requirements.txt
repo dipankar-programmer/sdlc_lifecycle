@@ -1,0 +1,14 @@
+langchain 
+python-dotenv 
+langchain-core 
+langchain-community 
+langchain_huggingface 
+langchain-groq 
+langgraph 
+langgraph-checkpoint
+pydantic
+IPython
+pydantic[dotenv] 
+streamlit
+typer[all]
+pytest
