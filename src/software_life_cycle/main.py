@@ -264,3 +264,5 @@ if __name__ == "__main__":
 
 
 #python -m software_life_cycle.main
+#docker pull dipzz/sdlc-ai-cli-v1
+#docker run -it -e GROQ_API_KEY=your api key sdlc-ai-cli
