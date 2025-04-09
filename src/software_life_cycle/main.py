@@ -13,7 +13,7 @@ console = Console()
 app = typer.Typer()
 displayed_content = set()
 
-# ---------- Utility Functions (Same as before) ----------
+# ---------- Utility Functions ----------
 
 def format_dict_to_markdown(content: dict) -> str:
     markdown_content = []

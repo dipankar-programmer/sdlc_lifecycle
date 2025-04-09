@@ -76,26 +76,27 @@ def auto_gen_us(state: SoftwareLifecycle) -> SoftwareLifecycle:
 # Step 3: Product owner review (manual CLI feedback)
 def product_owner_review(state: SoftwareLifecycle) -> SoftwareLifecycle:
     """Handle product owner review process"""
-    response = input("\nDo you approve these user stories? (yes/no): ").lower().strip()
-    
-    if response in ['yes', 'y', '']:
-        return state.model_copy(update={
-            "user_stories_feedback": "approved",
-            "feedback": "User stories approved",
-            "status": "approved"  # Add status for display
-        })
-    else:
-        return state.model_copy(update={
-            "user_stories_feedback": "Changes requested",
-            "feedback": "User stories need revision",
-            "status": "pending"  # Add status for display
-        })
-
+    return state
 
 # Step 3.1: Routing based on feedback
 def product_routing_cond(state: SoftwareLifecycle) -> Literal["create_design_doc", "auto_gen_us"]:
-    """Route based on product owner feedback"""
-    if state.user_stories_feedback == "approved":
-        return "create_design_doc"
-    return "auto_gen_us"
+    print("*" * 50 + " PRODUCT OWNER ROUTING " + "*" * 50)
+    #print(f"Current User Story: {state.user_stories}")
 
+    while True:
+        feedback = input("Do you approve the user story? (yes/no): ").strip().lower()
+
+        if feedback in ["yes", "y"]:
+            print("Approved! Returning: create_design_doc")
+            return "create_design_doc" 
+
+        elif feedback in ["no", "n"]:
+            user_feedback = input("Provide feedback: ").strip()
+            print("Rejected! Returning: auto_gen_us")
+            updated_userstories_feedback = state.user_stories_feedback + f"\n[Design Review]: {user_feedback}"
+            state = state.model_copy(update={"user_stories_feedback": updated_userstories_feedback})
+            return "auto_gen_us"
+
+        else:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+           
