@@ -1,5 +1,25 @@
+# Ignore Python virtual environments
 venv/
+.venv/
+
+# Ignore environment variables
+.env
 src/.env
+
+# Ignore test & demo notebooks
 Test/
-SDLC_working_till_Final.ipynb
-langchain_tutorial.ipynb
+*.ipynb
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore compiled files
+*.so
+
+# Ignore system files
+.DS_Store
+Thumbs.db

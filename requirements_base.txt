@@ -1,0 +1,7 @@
+langchain
+langchain-core
+langchain-community
+langchain_huggingface
+langchain-groq
+langgraph
+langgraph-checkpoint
